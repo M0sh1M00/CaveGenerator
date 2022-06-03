@@ -43,10 +43,10 @@ dirt = pygame.image.load("dirt.png")
 '''
 
 def show_progress_bar(gameBoard):
-    #for i in range(200):
-    #    for j in range(200):
-    #        if gameBoard[i][j]:
-    #            win.blit(dirt,(i*4,j*4))
+    for i in range(200):
+        for j in range(200):
+            if gameBoard[i][j]:
+                win.blit(dirt,(i*4,j*4))
     pygame.display.flip()
 
     for event in pygame.event.get():
@@ -116,8 +116,6 @@ def connectNodes(nodeList, gameBoard, connectChance):
         connections.add((node, firstClosest))
         if random.randint(0,connectChance) != 0:
             connections.add((node, secondClosest))
-
-    #print(connections)
     
     for connection in connections:
         
@@ -208,12 +206,6 @@ prettifyGameBoard(gameBoard)
 
 running = True
 while running:
-
-
-    
-    for node in smallNodes:
-        #print((node[0]*4,node[1]*4))
-        pass#win.blit(dirt,(node[0]*32,node[1]*32))
 
     for i in range(200):
         for j in range(200):
